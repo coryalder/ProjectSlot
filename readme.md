@@ -2,16 +2,21 @@
 
 A 3d printable mounting system for small modular projects.
 
+![photo of a full projectslot rail](images/projectslot-full.jpg)
+
 Inspired by DIN-rails, and compatible with 2020 aluminum extrusion.
 
 # Components
 
 - `projectslot`: stls/projectslot-v2-100mm.stl
-    These are the mounting rails. They are modelled on the v-slot in 2020 aluminum extrusion, and lots of hardware that works with 2020 should work with them. They have M3 holes at both ends to make them easy to mount. The rails are 100mm long, but could be extended to any length your 3d printer can handle.
+    - These are the mounting rails. They are modelled on the v-slot in 2020 aluminum extrusion, and lots of hardware that works with 2020 should work with them. They have M3 holes at both ends to make them easy to mount. The rails are 100mm long, but could be extended to any length your 3d printer can handle.
+    - ![photo of projectslot](images/projectslot.jpg)
 - `pcb-mounts`: stls/ps-pcb-mount-v3.stl
-    This is a little PCB side clip that clamps on using a t-nut and an M3x6 bolt. Use two to mount a PCB. This component is more flexible since you don't need to know the PCB size ahead of time, but it can be hard to clamp the PCB on tightly, and requires the most hardware. 3d printable t-nuts can be found on thingiverse [here](https://www.thingiverse.com/thing:3050607) & [here](https://www.thingiverse.com/thing:1609323).
+    - This is a little PCB side clip that clamps on using a t-nut and an M3x6 bolt. Use two to mount a PCB. This component is more flexible since you don't need to know the PCB size ahead of time, but it can be hard to clamp the PCB on tightly, and requires the most hardware. 3d printable t-nuts can be found on thingiverse [here](https://www.thingiverse.com/thing:3050607) & [here](https://www.thingiverse.com/thing:1609323).
+    - ![photo of pcb-mounts](images/pcb-mounts.jpg)
 - `pcb-slide-in-clip`: stls/ps-*mm-pcb-slide-in-clip.stl
-    This is a friction fit component for holding a small PCB in place. It uses no hardware, but you'll have to generate a model that's exactly the width of your PCB to use this. It's also a bit sensitive to the calibration of your printer - so you may have to play with the "PCB width" variable a bit to get a tight (but not too tight) fit.
+    - This is a friction fit component for holding a small PCB in place. It uses no hardware, but you'll have to generate a model that's exactly the width of your PCB to use this. It's also a bit sensitive to the calibration of your printer - so you may have to play with the "PCB width" variable a bit to get a tight (but not too tight) fit.
+    - ![photo of pcb-slide-in-clip](images/pcb-slide-in-clip.jpg)
 
 # CAD
 
