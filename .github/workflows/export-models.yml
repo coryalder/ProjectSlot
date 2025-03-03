@@ -29,4 +29,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: 3d-models
-          path: *.stl
+          path: |
+            projectslot.stl
+            ps-pcb-mount.stl
+            pcb-slide-in-clip.stl
