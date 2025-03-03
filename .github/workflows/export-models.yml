@@ -21,9 +21,9 @@ jobs:
       
       - name: Export STL from FreeCAD
         run: |
-          freecad --console --run-script "import FreeCAD; import Import; import Mesh; doc = FreeCAD.open('projectslot.FCStd'); Mesh.export([doc.getObject("projectslot")], 'projectslot.stl')"
-          freecad --console --run-script "import FreeCAD; import Import; import Mesh; doc = FreeCAD.open('projectslot.FCStd'); Mesh.export([doc.getObject("ps-pcb-mount")], 'ps-pcb-mount.stl')"
-          freecad --console --run-script "import FreeCAD; import Import; import Mesh; doc = FreeCAD.open('projectslot.FCStd'); Mesh.export([doc.getObject("pcb-slide-in-clip")], 'ps-pcb-slide-in-clip.stl')"
+          freecadcmd --run-script "import FreeCAD; import Import; import Mesh; doc = FreeCAD.open('projectslot.FCStd'); Mesh.export([doc.getObject("projectslot")], 'projectslot.stl')"
+          freecadcmd --run-script "import FreeCAD; import Import; import Mesh; doc = FreeCAD.open('projectslot.FCStd'); Mesh.export([doc.getObject("ps-pcb-mount")], 'ps-pcb-mount.stl')"
+          freecadcmd --run-script "import FreeCAD; import Import; import Mesh; doc = FreeCAD.open('projectslot.FCStd'); Mesh.export([doc.getObject("pcb-slide-in-clip")], 'ps-pcb-slide-in-clip.stl')"
       
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
