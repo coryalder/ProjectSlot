@@ -1,10 +1,8 @@
 # Project Slot
 
-A 3d printable mounting system for small modular projects.
+A 3d printable mounting system for small modular projects. Inspired by DIN-rails, and compatible with 2020 aluminum extrusion.
 
 ![photo of a full projectslot rail](images/projectslot-full.jpg)
-
-Inspired by DIN-rails, and compatible with 2020 aluminum extrusion.
 
 # Components
 
@@ -20,7 +18,7 @@ Inspired by DIN-rails, and compatible with 2020 aluminum extrusion.
 
 # CAD
 
-The project is build in FreeCAD, which I am VERY new to so if you have suggestions for ways to improve the CAD, please make a PR or open an issue. Editable parameters are found in a FreeCAD spreadsheet, for quick editing.
+The project is built in FreeCAD, which I am VERY new to so if you have suggestions for ways to improve the CAD, please make a PR or open an issue. Editable parameters are found in a FreeCAD spreadsheet, for quick editing.
 
 Note: if you make `Spreadsheet.pcb_width` too small when adjusting `pcb-slide-in-clip`, you'll have to reduce `Spreadsheet.chamfer` as well. When shrinking the PCB width, if you notice one of the sides getting cut off, try changing in 1mm increments - freecad seems to get confused if you change it too dramatically.
 
