@@ -11,13 +11,31 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      
-      - name: Install FreeCAD
-        run: |
-          sudo apt install software-properties-common apt-transport-https -y
-          sudo add-apt-repository ppa:freecad-maintainers/freecad-stable -y
-          sudo apt-get update
-          sudo apt install -y freecad
+
+      - name: Install FreeCAD Python library
+        run:  |
+          sudo apt -qq update
+          sudo apt-get -qq -y install python3
+          sudo apt-get -qq -y install python3-pip
+          sudo apt-get -qq -y install qtbase5-dev
+          python3 -m pip install --upgrade pip
+          pip install pyside2==5.15.2.1
+  
+      - name: Fetch FreeCAD
+        uses: dsaltares/fetch-gh-release-asset@master
+        with:
+          repo: "FreeCAD/FreeCAD"
+          version: "tags/1.0.0"
+          file: "FreeCAD_1.0.0-conda-Linux-x86_64-py311.AppImage"
+          target: "FreeCAD.AppImage"
+          token: ${{ secrets.GITHUB_TOKEN }}
+  
+      - name: Install FreeCad
+        run:  |
+          sudo chown runner:docker FreeCAD.AppImage
+          pwd
+          chmod +x FreeCAD.AppImage
+          ./FreeCAD.AppImage --appimage-extract > /dev/null
       
       - name: Export STL from FreeCAD
         run: |
