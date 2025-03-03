@@ -15,15 +15,15 @@ jobs:
       - name: Install FreeCAD
         run: |
           sudo apt install software-properties-common apt-transport-https -y
-          sudo add-apt-repository ppa:freecad-maintainers/freecad-daily -y
+          sudo add-apt-repository ppa:freecad-maintainers/freecad-stable -y
           sudo apt-get update
-          sudo apt install -y freecad-daily
+          sudo apt install -y freecad-stable
       
       - name: Export STL from FreeCAD
         run: |
-          freecad --console --run-script "import FreeCAD; import Import; import Mesh; doc = FreeCAD.open('projectslot.FCStd'); Mesh.export([doc.getObject("projectslot")], 'projectslot.stl')"
-          freecad --console --run-script "import FreeCAD; import Import; import Mesh; doc = FreeCAD.open('projectslot.FCStd'); Mesh.export([doc.getObject("ps-pcb-mount")], 'ps-pcb-mount.stl')"
-          freecad --console --run-script "import FreeCAD; import Import; import Mesh; doc = FreeCAD.open('projectslot.FCStd'); Mesh.export([doc.getObject("pcb-slide-in-clip")], 'ps-pcb-slide-in-clip.stl')"
+          freecad-stable --console --run-script "import FreeCAD; import Import; import Mesh; doc = FreeCAD.open('projectslot.FCStd'); Mesh.export([doc.getObject("projectslot")], 'projectslot.stl')"
+          freecad-stable --console --run-script "import FreeCAD; import Import; import Mesh; doc = FreeCAD.open('projectslot.FCStd'); Mesh.export([doc.getObject("ps-pcb-mount")], 'ps-pcb-mount.stl')"
+          freecad-stable --console --run-script "import FreeCAD; import Import; import Mesh; doc = FreeCAD.open('projectslot.FCStd'); Mesh.export([doc.getObject("pcb-slide-in-clip")], 'ps-pcb-slide-in-clip.stl')"
       
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
