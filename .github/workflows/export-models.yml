@@ -38,7 +38,7 @@ jobs:
       
       - name: Export STL from FreeCAD
         run: |
-          freecadcmd generate.py
+          ./FreeCAD.AppImage -c generate.py
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
