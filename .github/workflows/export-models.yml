@@ -26,10 +26,7 @@ jobs:
           freecadcmd --run-script "import FreeCAD; import Import; import Mesh; doc = FreeCAD.open('projectslot.FCStd'); Mesh.export([doc.getObject("pcb-slide-in-clip")], 'ps-pcb-slide-in-clip.stl')"
       
       - name: Upload artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: 3d-models
-          path: |
-            projectslot.stl
-            ps-pcb-mount.stl
-            pcb-slide-in-clip.stl
+          path: *.stl
