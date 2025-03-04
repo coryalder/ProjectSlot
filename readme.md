@@ -38,7 +38,8 @@ positional arguments:
 
 options:
   -h, --help       show this help message and exit
-  --length LENGTH  the length of the rail or width of pcb-clip, does nothing with pcb-holder```
+  --length LENGTH  the length of the rail or width of pcb-clip, does nothing with pcb-holder
+```
 
 Examples:
 
