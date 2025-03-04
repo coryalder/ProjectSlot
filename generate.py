@@ -1,5 +1,6 @@
 import sys
 import os
+import argparse
 
 freecad_paths = [
     '/home/runner/work/ProjectSlot/ProjectSlot/squashfs-root/usr/lib',  # For CI when using AppImage
@@ -23,11 +24,26 @@ import Mesh
 doc = FreeCAD.open('projectslot.FCStd')
 varset = doc.getObject("VarSet")
 
-# set variables like so:
-# varset.rail_length = 120
-# doc.recompute()
+parser = argparse.ArgumentParser(description='Generate STLs dynamically from a FreeCAD file')
+parser.add_argument('action', help='the stl to generate: all | rail | pcb-mount | pcb-clip')
+parser.add_argument('--length', help='the length of the rail or width of pcb-clip, does nothing with pcb-holder')
 
-targetObjLabels = ["projectslot", "ps-pcb-mount", "pcb-slide-in-clip"];
+args = parser.parse_args()
+
+targetObjLabels = [];
+
+if args.action == "all":
+    targetObjLabels = ["projectslot", "ps-pcb-mount", "pcb-slide-in-clip"]
+elif args.action == "rail":
+    targetObjLabels = ["projectslot"]
+    varset.rail_length = args.length or varset.rail_length
+elif args.action == "pcb-mount":
+    targetObjLabels = ["ps-pcb-mount"]
+elif args.action == "pcb-clip":
+    targetObjLabels = ["pcb-slide-in-clip"]
+    varset.pcb_width = args.length or varset.pcb_width
+
+doc.recompute()
 
 for obj in doc.Objects:
     if obj.Label in targetObjLabels:

@@ -27,6 +27,26 @@ Note: if you make `Spreadsheet.pcb_width` too small when adjusting `pcb-slide-in
 - All the accessories print without supports. 0.2mm layer height works well. Print in the same orientation as they sit on the rail - all the angles are 45 degrees so you shouldn't need supports to print them.
 - The rails print best with the open side down. I used tree supports for around the two mounting holes.
 
+# generate.py script
+
+If you have freecad installed in an expected place, you should be able to use this script to generate models parametrically:
+
+```Generate STLs dynamically from a FreeCAD file
+
+positional arguments:
+  action           the stl to generate: all | rail | pcb-mount | pcb-clip
+
+options:
+  -h, --help       show this help message and exit
+  --length LENGTH  the length of the rail or width of pcb-clip, does nothing with pcb-holder```
+
+Examples:
+
+1. `python3 generate.py all` - generate all models, with default parameters
+2. `python3 generate.py rail --length 200` generate a 200mm rail in `stls/projectslot.stl`
+3. `python3 generate.py pcb-clip --length 22` generate a 22mm pcb clip in `stls/pcb-slide-in-clip.stl`
+4. `python3 generate.py pcb-mount` generate the pcb mount in `stls/ps-pcb-mount.stl`
+
 # Todos
 
 - More mounting styles
