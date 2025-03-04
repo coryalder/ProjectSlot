@@ -30,7 +30,7 @@ jobs:
       
       - name: Export STL from FreeCAD
         run: |
-          ./squashfs-root/usr/bin/python generate.py
+          ./squashfs-root/usr/bin/python generate.py all
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
