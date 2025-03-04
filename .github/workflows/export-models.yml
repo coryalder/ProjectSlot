@@ -11,14 +11,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-
-      - name: Install FreeCAD Python library
-        run:  |
-          sudo apt -qq update
-          sudo apt-get -qq -y install python3
-          sudo apt-get -qq -y install python3-pip
-          sudo apt-get -qq -y install qtbase5-dev
-          python3 -m pip install --upgrade pip
   
       - name: Fetch FreeCAD
         uses: dsaltares/fetch-gh-release-asset@master
