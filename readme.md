@@ -31,7 +31,10 @@ Note: if you make `Spreadsheet.pcb_width` too small when adjusting `pcb-slide-in
 
 If you have freecad installed in an expected place, you should be able to use this script to generate models parametrically:
 
-```Generate STLs dynamically from a FreeCAD file
+```
+usage: generate.py [-h] [--length LENGTH] action
+
+Generate STLs dynamically from a FreeCAD file
 
 positional arguments:
   action           the stl to generate: all | rail | pcb-mount | pcb-clip
