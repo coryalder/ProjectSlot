@@ -37,6 +37,6 @@ jobs:
         with:
           name: 3d-models
           path: |
-            projectslot.stl
-            ps-pcb-mount.stl
-            pcb-slide-in-clip.stl
+            stls/projectslot.stl
+            stls/ps-pcb-mount.stl
+            stls/pcb-slide-in-clip.stl
